@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول - For Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>تسجيل الدخول</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="اسم المستخدم" required>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <button type="submit">تسجيل الدخول</button>
+      <p>ليس لديك حساب؟ <a href="register.html">أنشئ حساب الآن</a></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("login-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // هنا تحط التحقق من الحسابات الحقيقية، مبدئي نخزن في localStorage
+      if (username && password) {
+        localStorage.setItem("loggedIn", true);
+        window.location.href = "index.html";
+      } else {
+        alert("يرجى إدخال جميع البيانات بشكل صحيح.");
+      }
+    });
+  </script>
+</body>
+</html>
