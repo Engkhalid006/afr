@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>إنشاء حساب - For Watch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="register-container">
+    <h2>إنشاء حساب جديد</h2>
+    <form id="register-form">
+      <input type="text" id="new-username" placeholder="اسم المستخدم" required>
+      <input type="password" id="new-password" placeholder="كلمة المرور" required>
+      <button type="submit">إنشاء الحساب</button>
+      <p>لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("register-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const newUsername = document.getElementById("new-username").value;
+      const newPassword = document.getElementById("new-password").value;
+
+      if (newUsername && newPassword) {
+        // هنا يتم إرسال البيانات للسيرفر أو حفظها مؤقتًا
+        alert("تم إنشاء الحساب بنجاح! قم بتسجيل الدخول الآن.");
+        window.location.href = "login.html";
+      } else {
+        alert("يرجى إدخال جميع البيانات بشكل صحيح.");
+      }
+    });
+  </script>
+</body>
+</html>
